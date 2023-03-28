@@ -11,6 +11,13 @@ class WeatherService {
 
     getCurrentWeather = async (city) => {
         const res = await this.getResource(`https://api.weatherapi.com/v1/current.json?key=<API_KEY>&q=${city}`);
-        return res;
+        return this._transformWeatherObject(res);
+    }
+
+    _transformWeatherObject = (weatherObj) => {
+        return {
+            temp_c: weatherObj.current.temp_c,
+            name: weatherObj.location.name
+        }
     }
 }
