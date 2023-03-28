@@ -3,9 +3,11 @@ import { useState } from "react";
 function App() {
   const [city, setCity] = useState(''); 
   const [temperature, setTemperature] = useState('');
+  const [displayCity, setDisplayCity] = useState('');
 
   const onWeatherLoaded = (weatherObject) => {
     setTemperature(weatherObject.temp_c);
+    setDisplayCity(weatherObject.name);
   }
 
   const updateWeather = () => {
