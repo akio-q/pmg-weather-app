@@ -4,6 +4,12 @@ function App() {
   const [city, setCity] = useState(''); 
   const [temperature, setTemperature] = useState('');
 
+  const updateWeather = () => {
+    weatherService.getCurrentWeather(city)
+      .then()
+      .catch()
+  }
+
   return (
     <div className="App">
       <h1>PMG weather app</h1>
