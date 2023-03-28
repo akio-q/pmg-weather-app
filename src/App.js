@@ -9,7 +9,7 @@ function App() {
       <h1>PMG weather app</h1>
       <div className="container">
         <div className="left-panel">
-          <input id="search"></input>
+          <input id="search" value={city} onChange={(e) => setCity(e.target.value)}></input>
           <button>search</button>
         </div>
 
