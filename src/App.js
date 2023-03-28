@@ -26,8 +26,8 @@ function App() {
         </div>
 
         <div className="right-panel">
-          <h1>City Name</h1>
-          <h2>Temperature in °C</h2>
+          <h1>{!displayCity ? 'City Name' : displayCity}</h1>
+          <h2>{temperature ? `${temperature}°C` : 'Temperature in °C'}</h2>
         </div>
       </div>
     </div>
