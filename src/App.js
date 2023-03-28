@@ -1,9 +1,12 @@
 import { useState } from "react";
+import WeatherService from "./services/WeatherService";
 
 function App() {
   const [city, setCity] = useState(''); 
   const [temperature, setTemperature] = useState('');
   const [displayCity, setDisplayCity] = useState('');
+
+  const weatherService = new WeatherService();
 
   const onWeatherLoaded = (weatherObject) => {
     setTemperature(weatherObject.temp_c);
