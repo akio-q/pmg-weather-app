@@ -35,12 +35,26 @@ function App() {
         </div>
 
         <div className="right-panel">
-          <h1>{!displayCity ? 'City Name' : displayCity}</h1>
-          <h2>{temperature ? `${temperature}°C` : 'Temperature in °C'}</h2>
+          <VisibleContent displayCity={displayCity} temperature={temperature} error={error} /> 
         </div>
       </div>
     </div>
   );
+}
+
+const VisibleContent = ({displayCity, temperature, error}) => { 
+  if (error) { 
+    return ( 
+      <h2>Please, enter the correct data</h2> 
+    ) 
+  }
+
+  return ( 
+    <> 
+      <h1>{!displayCity ? 'City Name' : displayCity}</h1> 
+      <h2>{temperature ? `${temperature}°C` : 'Temperature in °C'}</h2> 
+    </> 
+  ) 
 }
 
 export default App;
