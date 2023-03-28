@@ -5,18 +5,24 @@ function App() {
   const [city, setCity] = useState(''); 
   const [temperature, setTemperature] = useState('');
   const [displayCity, setDisplayCity] = useState('');
+  const [error, setError] = useState(false);
 
   const weatherService = new WeatherService();
+
+  const onError = () => {
+    setError(true);
+  }
 
   const onWeatherLoaded = (weatherObject) => {
     setTemperature(weatherObject.temp_c);
     setDisplayCity(weatherObject.name);
+    setError(false);
   }
 
   const updateWeather = () => {
     weatherService.getCurrentWeather(city)
       .then(onWeatherLoaded)
-      .catch()
+      .catch(onError)
   }
 
   return (
