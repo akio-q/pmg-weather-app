@@ -30,11 +30,13 @@ function App() {
       <h1>PMG weather app</h1>
       <div className="container">
         <div className="left-panel">
-          <input id="search" 
+          <input 
+            id="search"
+            type="text" 
             value={city} 
             onChange={(e) => setCity(e.target.value)}
             placeholder='Enter the city' />
-          <button onClick={updateWeather}>search</button>
+          <button onClick={updateWeather}>Search</button>
         </div>
 
         <div className="right-panel">
@@ -54,7 +56,7 @@ const VisibleContent = ({displayCity, temperature, error}) => {
 
   return ( 
     <> 
-      <h1>{!displayCity ? 'City Name' : displayCity}</h1> 
+      <h2>{!displayCity ? 'City Name' : displayCity}</h2> 
       <h2>{temperature ? `${temperature}°C` : 'Temperature in °C'}</h2> 
     </> 
   ) 
