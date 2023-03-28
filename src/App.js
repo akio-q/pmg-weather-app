@@ -20,7 +20,7 @@ function App() {
       <div className="container">
         <div className="left-panel">
           <input id="search" value={city} onChange={(e) => setCity(e.target.value)}></input>
-          <button>search</button>
+          <button onClick={updateWeather}>search</button>
         </div>
 
         <div className="right-panel">
