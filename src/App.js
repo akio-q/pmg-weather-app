@@ -50,7 +50,10 @@ function App() {
 const VisibleContent = ({displayCity, temperature, error}) => { 
   if (error) { 
     return ( 
-      <h2>Please, enter the correct data</h2> 
+      <>
+        <h2>Oops... </h2> 
+        <h2>Please, enter the correct data</h2>
+      </>
     ) 
   }
 

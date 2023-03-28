@@ -20,10 +20,6 @@
     border-right: 5px solid #FDE74C;
 }
 
-.right-panel {
-    flex: 1;
-}
-
 input[type="text"] {
     font-size: 30px;
     color: #555;
