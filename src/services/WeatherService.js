@@ -8,4 +8,9 @@ class WeatherService {
 
         return await res.json();
     }
+
+    getCurrentWeather = async (city) => {
+        const res = await this.getResource(`https://api.weatherapi.com/v1/current.json?key=<API_KEY>&q=${city}`);
+        return res;
+    }
 }
