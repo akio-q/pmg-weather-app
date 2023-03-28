@@ -1,4 +1,9 @@
+import { useState } from "react";
+
 function App() {
+  const [city, setCity] = useState(''); 
+  const [temperature, setTemperature] = useState('');
+
   return (
     <div className="App">
       <h1>PMG weather app</h1>
