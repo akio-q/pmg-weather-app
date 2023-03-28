@@ -4,9 +4,13 @@ function App() {
   const [city, setCity] = useState(''); 
   const [temperature, setTemperature] = useState('');
 
+  const onWeatherLoaded = (weatherObject) => {
+    setTemperature(weatherObject.temp_c);
+  }
+
   const updateWeather = () => {
     weatherService.getCurrentWeather(city)
-      .then()
+      .then(onWeatherLoaded)
       .catch()
   }
 
