@@ -1,4 +1,7 @@
 class WeatherService {
+    _apiBase = 'https://api.weatherapi.com/v1/current.json?';
+    _apiKey = 'key=<API_KEY>';
+
     getResource = async (url) => {
         let res = await fetch(url);
 
@@ -10,7 +13,7 @@ class WeatherService {
     }
 
     getCurrentWeather = async (city) => {
-        const res = await this.getResource(`https://api.weatherapi.com/v1/current.json?key=<API_KEY>&q=${city}`);
+        const res = await this.getResource(`${this._apiBase}${this._apiKey}&q=${city}`);
         return this._transformWeatherObject(res);
     }
 
